@@ -24,6 +24,7 @@ os.chdir('..')
 sys.path.append('.')
 function_names = dir(__import__('matrixpro.matrix').matrix)
 from matrixpro.matrix import *
+
 os.chdir('matrixpro editor')
 with open('config.py', encoding='utf-8-sig') as f:
     exec(f.read())
@@ -32,7 +33,6 @@ with open('config.py', encoding='utf-8-sig') as f:
 def print(obj):
     root.outputs.insert(END, str(obj))
     root.outputs.insert(END, '\n')
-
 
 
 class Root(Tk):
@@ -101,7 +101,7 @@ class Root(Tk):
             print(traceback.format_exc())
             pass
         self.inputs_text = ttk.Label(self,
-                                     text='请在这里输入 musicpy 音乐代码语句',
+                                     text='请在这里输入matrixpro代码',
                                      background=self.background_color)
         self.inputs = Text(self,
                            wrap='none',
@@ -363,7 +363,6 @@ class Root(Tk):
         self.destroy()
         self.save_config(True, False)
 
-
     def get_current_line_column(self):
         ind = self.inputs.index(INSERT)
         line, column = ind.split('.')
@@ -446,7 +445,6 @@ class Root(Tk):
     def close_config_box(self):
         self.config_window.destroy()
         self.config_box_open = False
-
 
     def insert_bool(self, content):
         self.config_contents.delete('1.0', END)
@@ -993,7 +991,8 @@ class Root(Tk):
     def realtime_run(self):
         global function_names
         function_names = list(
-            set(function_names + list(locals().keys()) + list(globals().keys())))
+            set(function_names + list(locals().keys()) +
+                list(globals().keys())))
         if self.quit or (not self.is_realtime):
             self.quit = False
             return
@@ -1058,10 +1057,6 @@ class Root(Tk):
             self.inputs.edit_redo()
         except:
             pass
-
-
-
-
 
     def close_search_box(self):
         for each in self.search_inds_list:
@@ -1159,7 +1154,6 @@ class Root(Tk):
 
     def rightKey(self, event):
         self.menubar.tk_popup(event.x_root, event.y_root)
-
 
 
 root = Root()
