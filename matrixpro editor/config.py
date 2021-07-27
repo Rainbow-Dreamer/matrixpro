@@ -9,9 +9,7 @@
     'background_mode': 'white',
     'grammar_highlight': {
         'blue':
-        ['identity', 'mrange', 'matrix', 'square', 'build', 'form', 'ids'],
-        'green': ['toScale', 'scale', 'S'],
-        'orange': ['toNote', 'note', 'N']
+        ['identity', 'mrange', 'matrix', 'square', 'build', 'form', 'ids']
     },
     'background_color': 'white',
     'foreground_color': 'black',
