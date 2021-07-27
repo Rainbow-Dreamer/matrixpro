@@ -1,4 +1,3 @@
-include matrix.py
 include matrixpro.editor.pyw
 include bg.jpg
 include config.py

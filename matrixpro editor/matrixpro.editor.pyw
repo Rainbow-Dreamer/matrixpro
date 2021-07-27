@@ -1,5 +1,6 @@
 import traceback
 import sys
+import os
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
@@ -15,8 +16,11 @@ except:
     )
     sys.exit(1)
 from tkinter import filedialog
-function_names = dir(__import__('matrix')) + dir(__import__('matrix').matrix)
-from matrix import *
+os.chdir('..')
+sys.path.append('.')
+function_names = dir(__import__('matrixpro.matrix').matrix)
+from matrixpro.matrix import *
+os.chdir('matrixpro editor')
 with open('config.py', encoding='utf-8-sig') as f:
     exec(f.read())
 
