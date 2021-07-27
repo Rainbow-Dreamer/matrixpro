@@ -8,7 +8,8 @@
     'font_size': 15,
     'background_mode': 'white',
     'grammar_highlight': {
-        'blue': ['build', 'mrange', 'matrix', 'form', 'square', 'identity', 'ids'],
+        'blue':
+        ['identity', 'mrange', 'matrix', 'square', 'build', 'form', 'ids'],
         'green': ['toScale', 'scale', 'S'],
         'orange': ['toNote', 'note', 'N']
     },
