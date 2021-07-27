@@ -41,3 +41,33 @@ or for more readability,
 matrix_A = matrix([[1, 2],
                    [3, 4]])
 ```
+We can print this matrix,
+```python
+>>> print(matrix_A)
+[1, 2]
+[3, 4]
+```
+
+If we want to quickly create a matrix of m x n size with a default value, we can use `build` function:
+```python
+build(row_number, column_number=None, element=0)
+
+# row_number: the row number of the matrix
+
+# column_number: the column number of the matrix, if not set, this will be the same as the row number
+
+# element: the default element of all of the entries of the matrix, default value is 0
+
+matrix_B = build(10, 5) # build a matrix of 10 rows and 5 columns with default value 0
+>>> matrix_B
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+```
