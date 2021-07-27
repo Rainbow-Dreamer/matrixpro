@@ -13,14 +13,31 @@ pip install matrixpro
 ```
 When the installation finished, matrixpro is installed on your computer, you can use the following line at the beginning of your code to use matrixpro:
 ```python
-from matrixpro import *
+from matrixpro.matrix import *
 ```
 or you can use
 ```python
-import matrixpro as mp
+import matrixpro.matrix as mp
 ```
 to avoid duplicate function/class/variable names problems that could possibly occur.
 
 ## Usage
 This will only be a synopsis of the whole functionality of matrixpro, which includes the most basic and important usages of matrixpro, for more detailed introductions of this module, refer to wiki.
 
+### Create a matrix
+There are many ways to create a matrix in matrixpro, the most basic way to create a matrix in matrixpro is passing a list of lists to `matrix` class, where lists are rows of the matrix, each list has the elements of the row.
+
+For example, if we want to create a matrix
+```
+[1, 2]
+[3, 4]
+```
+we can write
+```python
+matrix_A = matrix([[1,2], [3, 4]])
+```
+or for more readability,
+```python
+matrix_A = matrix([[1, 2],
+                   [3, 4]])
+```
