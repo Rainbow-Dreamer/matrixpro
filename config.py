@@ -1,5 +1,5 @@
 config_dict = {
-    'background_image': '111.jpg',
+    'background_image': 'bg.jpg',
     'background_places': (700, 0),
     'eachline_character': 85,
     'pairing_symbols': ['()', '[]', "''", '""'],
