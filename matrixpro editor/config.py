@@ -8,11 +8,9 @@
     'font_size': 15,
     'background_mode': 'white',
     'grammar_highlight': {
-        'red': ['/', '@', '^', '~', '%', '&', '|', '+', '-', '?', '*'],
-        'blue': ['getchord', 'chord', 'trans', 'chd', 'C'],
+        'blue': ['build', 'mrange', 'matrix', 'form', 'square', 'identity', 'ids'],
         'green': ['toScale', 'scale', 'S'],
-        'orange': ['toNote', 'note', 'N'],
-        'violet': ['piece', 'build', 'P']
+        'orange': ['toNote', 'note', 'N']
     },
     'background_color': 'white',
     'foreground_color': 'black',
