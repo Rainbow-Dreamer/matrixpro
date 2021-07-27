@@ -1,6 +1,6 @@
 ﻿config_dict = {
     'background_image': 'bg.jpg',
-    'background_places': (840, -30),
+    'background_places': (860, -30),
     'eachline_character': 58,
     'pairing_symbols': ['()', '[]', "''", '""'],
     'wraplines_number': 2,

@@ -97,8 +97,7 @@ class Root(Tk):
             self.bg_label = ttk.Label(self, image=self.bg)
             bg_places = config_dict['background_places']
             self.bg_label.place(x=bg_places[0], y=bg_places[1])
-        except Exception as e:
-            print(traceback.format_exc())
+        except:
             pass
         self.inputs_text = ttk.Label(self,
                                      text='请在这里输入matrixpro代码',
