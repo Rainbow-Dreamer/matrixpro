@@ -187,3 +187,40 @@ To add 2 matrices A and B, you can write `A + B`.
 To subtract matrix B from matrix A, you can write `A - B`.  
 To multiply matrix A and matrix B, you can write `A * B`.  
 To divide matrix A by matrix B, you can write `A / B`.
+
+```python
+matrix_G = matrix([[1, 2], [3, 4]])
+matrix_H = matrix([[5, 6], [7, 8]])
+
+>>> matrix_G
+[1, 2]
+[3, 4]
+
+>>> matrix_H
+[5, 6]
+[7, 8]
+
+>>> matrix_G + matrix_H
+[6, 8]
+[10, 12]
+
+>>> matrix_G - matrix_H
+[-4, -4]
+[-4, -4]
+
+>>> matrix_G * matrix_H
+[19, 22]
+[43, 50]
+
+>>> matrix_G / matrix_H
+[3.000000000000009, -2.0000000000000067]
+[2.0000000000000018, -1.0000000000000018]
+
+# if the division result has too many digits after the decimal point and it is annoying for you,
+# you can use 'formated' function of matrix to round the floats to a given precision.
+# For more details about 'formated' function of matrix, refer to wiki.
+
+>>> (matrix_G / matrix_H).formated() # using default formated parameters
+[3, -2]
+[2, -1]
+```
