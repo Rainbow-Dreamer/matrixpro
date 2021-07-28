@@ -159,3 +159,31 @@ To create a square matrix, you can use `square` function:
 [0, 0, 0, 0, 0]
 [0, 0, 0, 0, 0]
 ```
+
+### Transpose of a matrix
+To get the transpose of a matrix, you can use `transpose` or `T` function of matrix.
+```python
+matrix_F = matrix([[1,2,3], [4,5,6]])
+
+>>> matrix_F
+[1, 2, 3]
+[4, 5, 6]
+
+>>> matrix_F.transpose()
+[1, 4]
+[2, 5]
+[3, 6]
+
+>>> matrix_F.T()
+[1, 4]
+[2, 5]
+[3, 6]
+```
+
+### Matrix addition, subtraction, multiplication and division
+The usages of calculations of matrix in matrixpro is similar as the calculations of integers and floats.
+
+To add 2 matrices A and B, you can write `A + B`.  
+To subtract matrix B from matrix A, you can write `A - B`.  
+To multiply matrix A and matrix B, you can write `A * B`.  
+To divide matrix A by matrix B, you can write `A / B`.
