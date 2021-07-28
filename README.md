@@ -224,3 +224,65 @@ matrix_H = matrix([[5, 6], [7, 8]])
 [3, -2]
 [2, -1]
 ```
+
+### Get a row, column or element of the matrix
+The syntax to get an element of the matrix is `matrix[row_number, column_number]`, or you can also get the element by treating the matrix object 
+as list of lists, which is `matrix[row_number][column_number]`. The row number and column number are both 0-based (start from 0). 
+The indexing of the row number and the column number are the same as list in python. For example:
+```python
+matrix_A = matrix([[1, 2], [3, 4]])
+
+>>> matrix_A
+[1, 2]
+[3, 4]
+
+>>> matrix_A[0, 0] # get the element at first row and first column of the matrix
+1
+
+>>> matrix_A[1, 1] # get the element at second row and second column of the matrix
+4
+
+>>> matrix_A[-1, -1] # get the element at the last row and the last column of the matrix
+4
+```
+
+To get a row of the matrix, you can write `matrix[row_number]`, which will return a list which is the corresponding row of the matrix with the row number.  
+To get a column of the matrix, you can write `matrix[column_number,]`, which will return a list which is the corresponding column of the matrix with the column number.  
+For example:
+```python
+>>> matrix_A[0] # get the first row of the matrix
+[1, 2]
+
+>>> matrix_A[0,] # get the first row of the matrix
+[1, 3]
+```
+
+### Modify rows, columns and elements of the matrix
+You can modify the rows, columns and elements by assigning to a list (for rows and columns) or element (for elements) when you are getting them.  
+For example:
+```python
+matrix_A = mrange(3)
+
+>>> matrix_A
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]
+
+matrix_A[0] = [10, 10, 10] # change the first row of the matrix to [10, 10, 10]
+>>> matrix_A
+[10, 10, 10]
+[4, 5, 6]
+[7, 8, 9]
+
+matrix_A[0,] = [10, 10, 10] # change the first column of the matrix to [10, 10, 10]
+>>> matrix_A
+[10, 10, 10]
+[10, 5, 6]
+[10, 8, 9]
+
+matrix_A[2, 2] = 20 # change the element at the 3rd row and the 3rd column to 20
+>>> matrix_A
+[10, 10, 10]
+[10, 5, 6]
+[10, 8, 20]
+```
