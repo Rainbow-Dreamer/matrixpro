@@ -110,3 +110,52 @@ matrix_D = mrange(5, 5, 0, 24) # generate a 5 x 5 square matrix with elements fr
 [15, 16, 17, 18, 19]
 [20, 21, 22, 23, 24]
 ```
+
+If we want to turn a list of elements into a matrix, we can use `form` function:
+```python
+form(val, nrow, ncol=None, default=0)
+# the list that contains elements you want to turn into a matrix
+# other parameters: refer to functions above
+
+values = [1, 2, 3, 4 ,5, 6]
+matrix_E = form(values, 2, 3)
+>>> matrix_E
+[1, 2, 3]
+[4, 5, 6]
+```
+
+### Create special matrices
+To create an identity matrix, you can use `identity` or `ids` function:
+```python
+>>> identity(5) # create an 5 x 5 identity matrix
+[1, 0, 0, 0, 0]
+[0, 1, 0, 0, 0]
+[0, 0, 1, 0, 0]
+[0, 0, 0, 1, 0]
+[0, 0, 0, 0, 1]
+```
+
+To create a diagonal matrix, you can use `diagonal` function:
+```python
+diagonal(element, nrow=None, ncol=None)
+
+# element: the list of elements at the diagonal from upper left corner to bottom right corner
+
+# nrow, ncol: if not set, these will both be the length of element, you can set nrow and ncol separately
+
+>>> diagonal([1, 2, 3]) # create a diagonal matrix with 1, 2, 3 on the diagonal
+[1, 0, 0]
+[0, 2, 0]
+[0, 0, 3]
+```
+
+To create a square matrix, you can use `square` function:
+```python
+# square function is basically build function when the row number is equal to the column number
+>>> square(5) # create a 5 x 5 square matrix with default value 0
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+```
