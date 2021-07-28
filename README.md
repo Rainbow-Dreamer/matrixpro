@@ -71,3 +71,34 @@ matrix_B = build(10, 5) # build a matrix of 10 rows and 5 columns with default v
 [0, 0, 0, 0, 0]
 [0, 0, 0, 0, 0]
 ```
+
+If we want to create a matrix which is filled with 1 ~ n integers, we can use `mrange` function:
+```python
+mrange(nrow, ncol=None, start=None, stop=None, default=0)
+
+# nrow: the row number of the matrix
+
+# ncol: the column number of the matrix, if not set, this will be the same as the row number
+
+# start: the start of the elements
+
+# stop: the last of the elements
+
+# default: the default value of the elements that are not filled
+
+# if both of start and stop are not set, the start value will be 1, the stop value will be nrow * ncol;
+
+# if start is set and stop is not set, the start value will be 1, the stop value will be start;
+
+# if both of start and stop are set, the start value will be start, the stop value will be stop;
+
+# you canoot make start not set and stop set, which means if you want to set the stop value, you must set the start value as well
+
+matrix_C = mrange(5) # generate a 5 x 5 square matrix with elements from 1 to 25
+>>> matrix_C
+[1, 2, 3, 4, 5]
+[6, 7, 8, 9, 10]
+[11, 12, 13, 14, 15]
+[16, 17, 18, 19, 20]
+[21, 22, 23, 24, 25]
+```
