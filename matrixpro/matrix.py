@@ -1500,7 +1500,8 @@ a matrix is singular or non-singular.'
             reduced row echelon form, rank, etc. (if any of above does not
             exist for this matrix, there will be reasons why it does not
             exist following up) '''
-        return f'matrix:\n{self.__str__()} \nsize: {self.row_number}x{self.column_number}\nrow number: {self.row_number} \ncolumn number: {self.column_number} \ndeterminant: {self.det()} \ninverse:\n{self.inv_lu()} \ntranspose: \n{self.transpose()}\ntrace: {self.trace()}\nrow echelon form:\n{self.ref()}\nreduced row echelon form:\n{self.rref()}\nrank: {self.rank()}' + (
+        determinant = self.det()
+        return f'matrix:\n{self.__str__()} \n\nsize: {self.row_number} x {self.column_number}\n\nrow number: {self.row_number} \n\ncolumn number: {self.column_number} \n\ndeterminant: {determinant} \n\ninverse:\n{self.inv_lu() if type(determinant) != str and determinant != 0 else "this matrix has determinant of 0 which means it does not have inverse matrix"} \n\ntranspose: \n{self.transpose()}\n\ntrace: {self.trace()}\n\nrow echelon form:\n{self.ref()}\n\nreduced row echelon form:\n{self.rref()}\n\nrank: {self.rank()}' + (
             f'\n{self.is_fullrank()}'
             if self.is_fullrank() == 'this matrix is in full rank' else '')
 
