@@ -286,3 +286,53 @@ matrix_A[2, 2] = 20 # change the element at the 3rd row and the 3rd column to 20
 [10, 5, 6]
 [10, 8, 20]
 ```
+
+### Calculate power of a matrix
+You can use `matrix ** n` or `matrix ^ n` to calculate the nth power of a matrix. Here `n` could be an integer, a float or a fraction.
+```python
+matrix_A = matrix([[1, 2], [3, 4]])
+
+>>> matrix_A
+[1, 2]
+[3, 4]
+
+>>> matrix_A ^ 2
+[7, 10]
+[15, 22]
+
+>>> matrix_A ** 2
+[7, 10]
+[15, 22]
+
+>>> matrix_A ^ -2
+[5.499999999999985, -2.499999999999993]
+[-3.74999999999999, 1.7499999999999953]
+```
+
+### Convenient syntax for adding/subtracting/multiplying/dividing every element in a matrix
+You can simply add/subtract/multiply/divide a number from the matrix, and the calculations will be applied to every element in the matrix.  
+For example, if you write `matrix + 1`, then you will get a new matrix object with every element in the matrix increased by 1.  
+The same logic applies for subtraction, multiplication and division. Here are some examples:
+```python
+matrix_A = matrix([[1, 2], [3, 4]])
+
+>>> matrix_A
+[1, 2]
+[3, 4]
+
+>>> matrix_A + 1
+[2, 3]
+[4, 5]
+
+>>> matrix_A - 1
+[0, 1]
+[2, 3]
+
+>>> matrix_A * 2
+[2, 4]
+[6, 8]
+
+>>> matrix_A / 2
+[0.5, 1.0]
+[1.5, 2.0]
+```
