@@ -336,3 +336,16 @@ matrix_A = matrix([[1, 2], [3, 4]])
 [0.5, 1.0]
 [1.5, 2.0]
 ```
+
+### Calculate the determinant of a matrix
+You can use `det` function of matrix object to calculate the determinant of a matrix.
+```python
+matrix_A = matrix([[1, 2], [3, 4]])
+
+>>> matrix_A
+[1, 2]
+[3, 4]
+
+>>> matrix_A.det()
+-2.0
+```
