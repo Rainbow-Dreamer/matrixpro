@@ -2515,6 +2515,20 @@ maybe you want to find singular values? Then you can use svd method to get them.
             D[i][i] = putlist[i]
         try:
             U = self * V.transpose().inv_lu() * D.inv_diag()
+            if type(U) == str:
+                U = left.eigen(tol, times=times, merge_eigval=formated)[1]
+                # test for signs of columns in U and V
+                # test for AV = UD
+                t1 = self * V
+                t2 = U * D
+                nrow, ncol = t1.dim()
+                G = min(nrow, ncol)
+                for j in range(G):
+                    if any(
+                            sign(t1[x, j], t2[x, j]) is False
+                            for x in range(nrow)):
+                        for k in range(U.row_number):
+                            U[k, j] *= -1
         except:
             U = left.eigen(tol, times=times, merge_eigval=formated)[1]
             # test for signs of columns in U and V
