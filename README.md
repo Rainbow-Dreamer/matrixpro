@@ -349,3 +349,54 @@ matrix_A = matrix([[1, 2], [3, 4]])
 >>> matrix_A.det()
 -2.0
 ```
+
+### Calculate the inverse of a matrix
+There are a few of algorithms to calculate the inverse of a matrix implemented in matrixpro. The default method is the adjoint method, which is a very 
+common method for calculating the inverse of a matrix **by hand**, it is not very efficient when it comes to large matrices. There are some numerical 
+methods for calculating the inverse of a matrix implemented in matrixpro, including LU decomposition method and Newton iteration method.  
+After some tests of large matrices, it shows that LU decomposition method has the fastest speed for calculating the inverse of a matrix, and also remains 
+good stability.
+
+To use default inverse method, you can use `inverse` or `inv` function of the matrix object.  
+To use LU decomposition method, you can use `inv_lu` function of the matrix object.  
+To use Newton iteration method, you can use `inv_newton` function of the matrix object.
+
+You can also calculate the generalized inverse (pseudoinverse) of a m x n matrix by using `pinv` function of the matrix object.
+
+```python
+matrix_A = matrix([[1, 2], [3, 4]])
+
+>>> matrix_A
+[1, 2]
+[3, 4]
+
+>>> matrix_A.inverse() # using the default adjoint method
+[-2.0, 1.0]
+[1.5, -0.5]
+
+>>> matrix_A.inv_lu() # using the LU decomposition method
+[-2.0, 1.0]
+[1.5, -0.5]
+
+>>> matrix_A.inv_newton(tol=1e-3) # using the Newton iteration method
+[-1.9996027561324514, 0.9998242712755511]
+[1.499720054620951, -0.49987616059455053]
+
+matrix_B = mrange(2, 3)
+
+>>> matrix_B
+[1, 2, 3]
+[4, 5, 6]
+
+>>> matrix_B.pinv() # calculate pseudoinverse of a non-square matrix
+[-0.9444444444444433, 0.444444444444444]
+[-0.11111111111111072, 0.11111111111111116]
+[0.7222222222222219, -0.22222222222222188]
+```
+
+### Calculate the (reduced) row echelon form of a matrix
+
+### Calculate the eigenvalues and eigenvectors of a matrix
+
+### Some other functionalities
+rank, trace
