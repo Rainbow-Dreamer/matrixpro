@@ -276,7 +276,7 @@ class Root(Tk):
         self.menubar.add_command(label='Redo',
                                  command=self.inputs_redo,
                                  foreground=self.foreground_color)
-        self.menubar.add_command(label='搜索',
+        self.menubar.add_command(label='Search',
                                  command=self.search_words,
                                  foreground=self.foreground_color)
         self.inputs.bind("<Button-3>", lambda e: self.rightKey(e))
