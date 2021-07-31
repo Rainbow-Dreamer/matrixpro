@@ -395,8 +395,119 @@ matrix_B = mrange(2, 3)
 ```
 
 ### Calculate the (reduced) row echelon form of a matrix
+You can use `ref` function of the matrix object to calculate the row echelon form of a matrix, and use `rref` function of the matrix object to calculate 
+the reduced row echelon form of a matrix.
+```python
+matrix_A = mrange(5)
+
+>>> matrix_A
+[1, 2, 3, 4, 5]
+[6, 7, 8, 9, 10]
+[11, 12, 13, 14, 15]
+[16, 17, 18, 19, 20]
+[21, 22, 23, 24, 25]
+
+>>> matrix_A.ref() # calculate the row echelon form of the matrix
+[1, 2, 3, 4, 5]
+[0, 1, 2, 3, 4]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+
+>>> matrix_A.rref() # calculate the reduced row echelon form of the matrix
+[1, 0, -1, -2, -3]
+[0, 1, 2, 3, 4]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+```
 
 ### Calculate the eigenvalues and eigenvectors of a matrix
+You can use `eigen` function of the matrix object to calculate the eigenvalues and the eigenvectors of a matrix.  
+The return values of `eigen` function are 2 matrices, the first one is a diagonal matrix with eigenvalues on the diagonal, 
+the second one is a matrix where each column is one of the eigenvectors.
+
+To get only eigenvalues or eigenvectors of a matrix, you can use `eigval` function of the matrix object for eigenvalues, 
+`eigvec` function of the matrix object for eigenvectors. Note that `eigval` function will return a list of eigenvalues.
+
+```python
+matrix_A = mrange(5)
+
+>>> matrix_A
+[1, 2, 3, 4, 5]
+[6, 7, 8, 9, 10]
+[11, 12, 13, 14, 15]
+[16, 17, 18, 19, 20]
+[21, 22, 23, 24, 25]
+
+eigenvalues, eigenvectors = matrix_A.eigen() # calculate the eigenvalues and the eigenvectors of the matrix
+
+>>> eigenvalues
+[68.62358776522458, 0, 0, 0, 0]
+[0, -3.62358776522458, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+
+>>> eigenvectors
+[0.10797497846502196, 0.6749528825442898, 0.14744195615489714, 0.29488391230979427, 0.4423258684646914]
+[0.25277500450721396, 0.3603897570511307, -0.29488391230979427, -0.4423258684646914, -0.5897678246195885]
+[0.3975750305494059, 0.045826631557971335, 0.14744195615489714, 0.0, 0.0]
+[0.5423750565915979, -0.26873649393518717, 0.0, 0.14744195615489714, 0.0]
+[0.6871750826337898, -0.5832996194283467, 0.0, 0.0, 0.14744195615489714]
+
+>>> matrix_A.eigval()
+[68.62358776522458, -3.623587765224578, 3.314793091830836e-16, -1.5318106288467553e-16, 3.9624216894511006e-16]
+
+>>> matrix_A.eigvec()
+[0.10797497846502196, 0.6749528825442898, 0.14744195615489714, 0.29488391230979427, 0.4423258684646914]
+[0.25277500450721396, 0.3603897570511307, -0.29488391230979427, -0.4423258684646914, -0.5897678246195885]
+[0.3975750305494059, 0.045826631557971335, 0.14744195615489714, 0.0, 0.0]
+[0.5423750565915979, -0.26873649393518717, 0.0, 0.14744195615489714, 0.0]
+[0.6871750826337898, -0.5832996194283467, 0.0, 0.0, 0.14744195615489714]
+```
 
 ### Some other functionalities
-rank, trace
+You can use `rank` function of the matrix object to calculate the rank of a matrix.
+```python
+matrix_A = mrange(5)
+>>> matrix_A.rank()
+2
+```
+
+You can use `trace` function of the matrix object to calculate the trace of a matrix.
+```python
+matrix_A = mrange(5)
+>>> matrix_A.trace()
+65
+```
+
+You can use `flip` function of the matrix object to flip a matrix vertically or horizontally.
+
+The parameter 'mode' of `flip` function determines to flip horizontally or vertically. 
+If the parameter 'mode' is 0, flip the matrix horizontally, otherwise, flip the matrix vertically. 
+The parameter 'mode' is 0 as default.
+```python
+matrix_A = mrange(5)
+
+>>> matrix_A
+[1, 2, 3, 4, 5]
+[6, 7, 8, 9, 10]
+[11, 12, 13, 14, 15]
+[16, 17, 18, 19, 20]
+[21, 22, 23, 24, 25]
+
+>>> matrix_A.flip() # flip the matrix horizontally
+[5, 4, 3, 2, 1]
+[10, 9, 8, 7, 6]
+[15, 14, 13, 12, 11]
+[20, 19, 18, 17, 16]
+[25, 24, 23, 22, 21]
+
+>>> matrix_A.flip(1)
+[21, 22, 23, 24, 25]
+[16, 17, 18, 19, 20]
+[11, 12, 13, 14, 15]
+[6, 7, 8, 9, 10]
+[1, 2, 3, 4, 5]
+```
