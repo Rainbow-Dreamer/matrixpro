@@ -484,9 +484,9 @@ matrix_A = mrange(5)
 
 You can use `flip` function of the matrix object to flip a matrix vertically or horizontally.
 
-The parameter 'mode' of `flip` function determines to flip horizontally or vertically. 
-If the parameter 'mode' is 0, flip the matrix horizontally, otherwise, flip the matrix vertically. 
-The parameter 'mode' is 0 as default.
+The parameter `mode` of `flip` function determines to flip horizontally or vertically. 
+If the parameter `mode` is 0, flip the matrix horizontally, otherwise, flip the matrix vertically. 
+The parameter `mode` is 0 as default.
 ```python
 matrix_A = mrange(5)
 
