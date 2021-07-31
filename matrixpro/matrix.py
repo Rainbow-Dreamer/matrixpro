@@ -1207,12 +1207,12 @@ class matrix:
     def append(self, m, mode=0):
         if mode == 0:
             if len(m) != self.column_number:
-                return 'the length of the new row is not equal to f this matrix\'s column number'
+                return 'the length of the new row is not equal to this matrix\'s column number'
             self.row.append(m)
             self.row_number += 1
         else:
             if len(m) != self.row_number:
-                return 'the length of the new column is not equal to f this matrix\'s row number'
+                return 'the length of the new column is not equal to this matrix\'s row number'
             for i in range(self.row_number):
                 self[i].append(m[i])
             self.column_number += 1
@@ -1220,12 +1220,12 @@ class matrix:
     def insert(self, ind, m, mode=0):
         if mode == 0:
             if len(m) != self.column_number:
-                return 'the length of the new row is not equal to f this matrix\'s column number'
+                return 'the length of the new row is not equal to this matrix\'s column number'
             self.row.insert(ind, m)
             self.row_number += 1
         elif mode == 1:
             if len(m) != self.row_number:
-                return 'the length of the new column is not equal to f this matrix\'s row number'
+                return 'the length of the new column is not equal to this matrix\'s row number'
             for i in range(self.row_number):
                 self[i].insert(ind, m[i])
             self.column_number += 1
