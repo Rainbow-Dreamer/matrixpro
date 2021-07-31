@@ -375,7 +375,7 @@ class matrix:
 
     def flipped(self, mode=0):
         if mode != 0:
-            self.row = list(reversed(self.row))
+            self.row.reverse()
         else:
             self.row = matrix(list(reversed(
                 self.transpose().row))).transpose().row
@@ -2940,6 +2940,20 @@ maybe you want to find singular values? Then you can use svd method to get them.
             temp = matrix(new_row)
             counter -= 1
         return temp
+
+    def apply(self, func):
+        temp = self.copy()
+        temp.row = [[func(i) for i in each] for each in temp.row]
+        return temp
+
+    def invert(self):
+        return self.apply(lambda s: 1 - s)
+
+    def vector(self, ind, mode=0):
+        if mode == 0:
+            return self.cut(ind, ind + 1, 1)
+        else:
+            return self.cut(ind, ind + 1)
 
 
 class cell:
