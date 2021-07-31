@@ -2941,19 +2941,44 @@ maybe you want to find singular values? Then you can use svd method to get them.
             counter -= 1
         return temp
 
-    def apply(self, func):
+    def apply(self, func, ind=None, row=None, column=None, element=None):
         temp = self.copy()
-        temp.row = [[func(i) for i in each] for each in temp.row]
+        if row is None and column is None and element is None:
+            temp.row = [[func(i) for i in each] for each in temp.row]
+        else:
+            if row is not None:
+                if type(row) == int:
+                    temp[row] = [func(i) for i in temp[row]]
+                else:
+                    for each in row:
+                        temp[each] = [func(i) for i in temp[each]]
+            if column is not None:
+                if type(column) == int:
+                    temp[column, ] = [func(i) for i in temp[column, ]]
+                else:
+                    for each in column:
+                        temp[each, ] = [func(i) for i in temp[each, ]]
+            if element is not None:
+                if type(element[0]) == int:
+                    temp[element] = func(temp[element])
+                else:
+                    for each in element:
+                        temp[each] = func(temp[each])
         return temp
 
     def invert(self):
         return self.apply(lambda s: 1 - s)
 
-    def vector(self, ind, mode=0):
+    def vector(self, ind, mode=0, asmatrix=True):
         if mode == 0:
-            return self.cut(ind, ind + 1, 1)
+            result = self.cut(ind, ind + 1, 1)
+            if not asmatrix:
+                result = result.T().row[0]
         else:
-            return self.cut(ind, ind + 1)
+            result = self.cut(ind, ind + 1)
+            if not asmatrix:
+                result = result.row[0]
+        return result
 
 
 class cell:
