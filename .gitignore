@@ -2,3 +2,4 @@
 matrixpro.egg-info
 dist/*
 **/browse memory.txt
+test.py
