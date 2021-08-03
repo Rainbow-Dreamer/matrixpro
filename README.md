@@ -180,6 +180,41 @@ matrix_F = matrix([[1,2,3], [4,5,6]])
 [3, 6]
 ```
 
+### Get row number and column number of the matrix
+You can directly get the attributes `row_number` and `column_number` of the matrix object, these attributes are calculated once the matrix object is build.  
+For short, you can use `rown` function of the matrix object to get the row number of the matrix, and `coln` function of the matrix object to get the column 
+number of the matrix.  
+You can use `dim` function of the matrix object to get the dimension (size) of the matrix in a tuple `(m, n)`, where `m` is row number and `n` is column number.  
+You can use `size` function of the matrix object to get the dimension (size) of the matrix in a string `mxn`, where `m` is row number and `n` is column number.
+```python
+matrix_A = build(5, 7)
+
+>>> matrix_A
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+
+>>> matrix_A.row_number # get the attribute 'row_number' of the matrix
+5
+
+>>> matrix_A.column_number # get the attribute 'column_number' of the matrix
+7
+
+>>> matrix_A.rown() # get the row number of the matrix
+5
+
+>>> matrix_A.coln() # get the column number of the matrix
+7
+
+>>> matrix_A.dim() # get the dimension (size) of the matrix in a tuple
+(5, 7)
+
+>>> matrix_A.size() # get the dimension (size) of the matrix in a string
+'5x7'
+```
+
 ### Matrix addition, subtraction, multiplication and division
 The usages of calculations of matrix in matrixpro is similar as the calculations of integers and floats.
 
