@@ -175,7 +175,7 @@ class Root(Tk):
         self.wraplines_button = ttk.Button(self,
                                            text='Word Wrap',
                                            command=self.wraplines)
-        self.realtime_box.place(x=400, y=0)
+        self.realtime_box.place(x=410, y=0)
         self.auto_box.place(x=500, y=0)
         self.grammar_box.place(x=740, y=0)
         self.wraplines_button.place(x=750, y=350)
@@ -774,7 +774,7 @@ class Root(Tk):
                     f.write(self.last_save)
             else:
                 self.save()
-            self.title('Musicpy Editor')
+            self.title('Matrixpro Editor')
 
     def save(self):
         filename = filedialog.asksaveasfilename(initialdir=self.last_place,
