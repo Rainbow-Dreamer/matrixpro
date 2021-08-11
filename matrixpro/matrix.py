@@ -1478,7 +1478,7 @@ a matrix is singular or non-singular.'
             kernel_values = kernel.split()
             center_range = kernel.rown() // 2
             row_number, column_number = self.dim()
-            result = build(*self.dim())
+            result = build(row_number, column_number)
             not_padding_zero = []
             for i in range(row_number):
                 for j in range(column_number):
