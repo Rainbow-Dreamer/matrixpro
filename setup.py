@@ -3,22 +3,22 @@ from os import path
 
 setup(
     name='matrixpro',
-    packages = ['matrixpro'],
-    version='0.27',
-    license='AGPLv3',
+    packages=['matrixpro'],
+    version='0.28',
+    license='LGPLv2.1',
     description=
     'This is a python module for handling matrices, including matrix calculation, analysis and algorithms.',
     author='Rainbow-Dreamer',
     author_email='1036889495@qq.com',
     url='https://github.com/Rainbow-Dreamer/matrixpro',
     download_url=
-    'https://github.com/Rainbow-Dreamer/matrixpro/archive/0.27.tar.gz',
+    'https://github.com/Rainbow-Dreamer/matrixpro/archive/0.28.tar.gz',
     keywords=['matrix', 'mathematics', 'statistics'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
-        'License :: OSI Approved :: GNU Affero General Public License v3',
+        'License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
