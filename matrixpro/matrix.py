@@ -76,6 +76,7 @@ class matrix:
         column_number: An integer represents the column number of the matrix.
         
     '''
+
     def __init__(self,
                  row,
                  rownames=[],
@@ -1114,20 +1115,28 @@ class matrix:
                     return self.select(ind[0], ind[1])
                 return row[ind[0]][ind[1]]
             elif indlen == 1:
+                current_ind = ind[0]
                 if type(ind) == tuple:
-                    if isls(ind[0]) or callable(ind[0]):
-                        return self.select(ind[0])
-                    return [i[ind[0]] for i in row]
+                    if isls(current_ind) or callable(current_ind):
+                        return self.select(current_ind)
+                    elif isinstance(current_ind, slice):
+                        return [[each[i] for each in row] for i in range(
+                            current_ind.start if current_ind.start else 0,
+                            current_ind.stop if current_ind.stop else self.
+                            coln())]
+                    return [i[current_ind] for i in row]
                 return row[ind]
             elif indlen > 2:
                 if ind[-1] == 'col':
                     return self.select(ind[:-1], 1)
                 else:
                     return self.select(ind)
-        if callable(ind):
+        elif callable(ind):
             return self.select(ind)
-        if isinstance(ind, cell):
+        elif isinstance(ind, cell):
             return row[ind[0]][ind[1]]
+        elif isinstance(ind, slice):
+            return row[ind]
         return row[ind]
 
     def __setitem__(self, ind, item):
@@ -2992,6 +3001,7 @@ maybe you want to find singular values? Then you can use svd method to get them.
 
 
 class cell:
+
     def __init__(self, x, y, xrange=None, yrange=None):
         self.x = x
         self.y = y
