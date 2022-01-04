@@ -4,7 +4,7 @@ from os import path
 setup(
     name='matrixpro',
     packages=['matrixpro'],
-    version='0.28',
+    version='0.31',
     license='LGPLv2.1',
     description=
     'This is a python module for handling matrices, including matrix calculation, analysis and algorithms.',
@@ -12,7 +12,7 @@ setup(
     author_email='1036889495@qq.com',
     url='https://github.com/Rainbow-Dreamer/matrixpro',
     download_url=
-    'https://github.com/Rainbow-Dreamer/matrixpro/archive/0.28.tar.gz',
+    'https://github.com/Rainbow-Dreamer/matrixpro/archive/0.31.tar.gz',
     keywords=['matrix', 'mathematics', 'statistics'],
     classifiers=[
         'Development Status :: 3 - Alpha',
