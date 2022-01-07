@@ -1124,6 +1124,8 @@ class matrix:
                             current_ind.start if current_ind.start else 0,
                             current_ind.stop if current_ind.stop else self.
                             coln())]
+                    elif isinstance(current_ind, str):
+                        return self % current_ind
                     return [i[current_ind] for i in row]
                 return row[ind]
             elif indlen > 2:
@@ -1137,6 +1139,8 @@ class matrix:
             return row[ind[0]][ind[1]]
         elif isinstance(ind, slice):
             return row[ind]
+        elif isinstance(ind, str):
+            return self @ ind
         return row[ind]
 
     def __setitem__(self, ind, item):
