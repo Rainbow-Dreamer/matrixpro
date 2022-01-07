@@ -13,11 +13,11 @@ pip install matrixpro
 ```
 When the installation finished, matrixpro is installed on your computer, you can use the following line at the beginning of your code to use matrixpro:
 ```python
-from matrixpro.matrix import *
+from matrixpro import *
 ```
 or you can use
 ```python
-import matrixpro.matrix as mp
+import matrixpro as mp
 ```
 to avoid duplicate function/class/variable names problems that could possibly occur.
 
