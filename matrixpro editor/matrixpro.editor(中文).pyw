@@ -36,6 +36,7 @@ def print(obj):
 
 
 class Root(Tk):
+
     def __init__(self):
         super(Root, self).__init__()
         self.minsize(1200, 640)
@@ -237,11 +238,6 @@ class Root(Tk):
 
         self.auto_complete_run()
         self.realtime_run()
-        try:
-            with open('browse memory.txt', encoding='utf-8-sig') as f:
-                self.last_place = f.read()
-        except:
-            self.last_place = "."
         self.bg_mode = config_dict['background_mode']
         self.turn_bg_mode = ttk.Button(
             self,
@@ -409,15 +405,10 @@ class Root(Tk):
             config_dict['background_mode'] = self.bg_mode
 
     def openfile(self):
-        filename = filedialog.askopenfilename(initialdir=self.last_place,
-                                              title="选择文件",
+        filename = filedialog.askopenfilename(title="选择文件",
                                               filetypes=(("所有文件", "*.*"), ))
         if filename:
             self.current_filename_path = filename
-            memory = filename[:filename.rindex('/') + 1]
-            with open('browse memory.txt', 'w', encoding='utf-8-sig') as f:
-                f.write(memory)
-            self.last_place = memory
             try:
                 with open(filename, encoding='utf-8-sig',
                           errors='ignore') as f:
@@ -702,15 +693,10 @@ class Root(Tk):
             self.reload_config()
 
     def search_path(self, obj):
-        filename = filedialog.askopenfilename(initialdir=self.last_place,
-                                              parent=self.config_window,
+        filename = filedialog.askopenfilename(parent=self.config_window,
                                               title="选择文件",
                                               filetypes=(("所有文件", "*.*"), ))
         if filename:
-            memory = filename[:filename.rindex('/') + 1]
-            with open('browse memory.txt', 'w', encoding='utf-8-sig') as f:
-                f.write(memory)
-            self.last_place = memory
             obj.delete(0, END)
             obj.insert(END, filename)
 
@@ -772,17 +758,12 @@ class Root(Tk):
             self.title('Matrixpro Editor')
 
     def save(self):
-        filename = filedialog.asksaveasfilename(initialdir=self.last_place,
-                                                title="保存输入文本",
+        filename = filedialog.asksaveasfilename(title="保存输入文本",
                                                 filetypes=(("所有文件", "*.*"), ),
                                                 defaultextension=".txt",
                                                 initialfile='Untitled.txt')
         if filename:
             self.current_filename_path = filename
-            memory = filename[:filename.rindex('/') + 1]
-            with open('browse memory.txt', 'w', encoding='utf-8-sig') as f:
-                f.write(memory)
-            self.last_place = memory
             current_text = self.inputs.get('1.0', 'end-1c')
             with open(filename, 'w', encoding='utf-8-sig') as f:
                 f.write(current_text)
