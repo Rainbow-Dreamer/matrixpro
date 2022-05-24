@@ -1,4 +1,4 @@
-﻿config_dict = {
+config_dict = {
     'background_image': 'bg.jpg',
     'background_places': (860, -30),
     'eachline_character': 58,
