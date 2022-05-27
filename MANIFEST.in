@@ -1,5 +1,2 @@
-include matrixpro.editor.pyw
-include bg.jpg
-include config.py
 include README.md
 include LICENSE
