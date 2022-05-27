@@ -406,7 +406,7 @@ class Root(Tk):
 
     def openfile(self):
         filename = filedialog.askopenfilename(title="选择文件",
-                                              filetypes=(("所有文件", "*.*"), ))
+                                              filetypes=(("所有文件", "*"), ))
         if filename:
             self.current_filename_path = filename
             try:
@@ -490,7 +490,7 @@ class Root(Tk):
     def choose_filename(self):
         filename = filedialog.askopenfilename(parent=self.config_window,
                                               title="选择文件",
-                                              filetypes=(("所有文件", "*.*"), ))
+                                              filetypes=(("所有文件", "*"), ))
         self.config_contents.delete('1.0', END)
         self.config_contents.insert(END, filename)
         self.config_change()
@@ -692,7 +692,7 @@ class Root(Tk):
     def search_path(self, obj):
         filename = filedialog.askopenfilename(parent=self.config_window,
                                               title="选择文件",
-                                              filetypes=(("所有文件", "*.*"), ))
+                                              filetypes=(("所有文件", "*"), ))
         if filename:
             obj.delete(0, END)
             obj.insert(END, filename)
@@ -755,7 +755,7 @@ class Root(Tk):
 
     def save(self):
         filename = filedialog.asksaveasfilename(title="保存输入文本",
-                                                filetypes=(("所有文件", "*.*"), ),
+                                                filetypes=(("所有文件", "*"), ),
                                                 defaultextension=".txt",
                                                 initialfile='Untitled.txt')
         if filename:
