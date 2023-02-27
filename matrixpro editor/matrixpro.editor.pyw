@@ -93,7 +93,7 @@ class Root(Tk):
             ratio = 600 / self.bg.height
             self.bg = self.bg.resize(
                 (int(self.bg.width * ratio), int(self.bg.height * ratio)),
-                PIL.Image.ANTIALIAS)
+                PIL.Image.Resampling.LANCZOS)
             self.bg = PIL.ImageTk.PhotoImage(self.bg)
             self.bg_label = ttk.Label(self, image=self.bg)
             bg_places = config_dict['background_places']
@@ -709,7 +709,7 @@ class Root(Tk):
                 ratio = 600 / self.bg.height
                 self.bg = self.bg.resize(
                     (int(self.bg.width * ratio), int(self.bg.height * ratio)),
-                    PIL.Image.ANTIALIAS)
+                    PIL.Image.Resampling.LANCZOS)
                 self.bg = PIL.ImageTk.PhotoImage(self.bg)
                 self.bg_label.configure(image=self.bg)
                 bg_places = config_dict['background_places']
@@ -724,7 +724,7 @@ class Root(Tk):
                 ratio = 600 / self.bg.height
                 self.bg = self.bg.resize(
                     (int(self.bg.width * ratio), int(self.bg.height * ratio)),
-                    PIL.Image.ANTIALIAS)
+                    PIL.Image.Resampling.LANCZOS)
                 self.bg = PIL.ImageTk.PhotoImage(self.bg)
                 self.bg_label = ttk.Label(self, image=self.bg)
                 bg_places = config_dict['background_places']
